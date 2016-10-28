@@ -5,3 +5,11 @@ fct_homepage:
 fct_empresas:
     path:     /empresas/all
     defaults: { _controller: FctBundle:Empresas:all }
+
+nueva_empresas:
+    path:     /empresas/nueva
+    defaults: { _controller: FctBundle:Empresas:nueva }
+
+exito_empresas:
+    path:     /empresas/msgExito
+    defaults: { _controller: FctBundle:Empresas:msgExito }
