@@ -1,9 +1,5 @@
 FctBundle\Entity\Empresas:
     type: entity
-    oneToMany:
-        alumnos:
-            targetEntity: Alumnos
-            mappedBy: empresas
     table: null
     repositoryClass: FctBundle\Repository\EmpresasRepository
     id:
@@ -29,3 +25,7 @@ FctBundle\Entity\Empresas:
             type: datetime
             column: fecha_creacion
     lifecycleCallbacks: {  }
+    oneToMany:
+          alumnos:
+              targetEntity: Alumnos
+              mappedBy: empresas
