@@ -25,3 +25,7 @@ FctBundle\Entity\Empresas:
             type: datetime
             column: fecha_creacion
     lifecycleCallbacks: {  }
+    oneToMany:
+          alumnos:
+              targetEntity: Alumnos
+              mappedBy: empresas
