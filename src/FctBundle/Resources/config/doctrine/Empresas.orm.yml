@@ -1,5 +1,9 @@
 FctBundle\Entity\Empresas:
     type: entity
+    oneToMany:
+        alumnos:
+            targetEntity: Alumnos
+            mappedBy: empresas
     table: null
     repositoryClass: FctBundle\Repository\EmpresasRepository
     id:
