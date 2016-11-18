@@ -7,11 +7,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ResetType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 
-class EmpresasType extends AbstractType
+class AlumnosType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -20,12 +17,10 @@ class EmpresasType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre',TextType::class,array('label'=>'Nombre de la Empresa'))
-            ->add('direccion',TextType::class)
-            ->add('cp',IntegerType::class,array('label'=>'Código Postal'))
-            ->add('telefono1',IntegerType::class,array('label'=>'Teléfono Principal'))
-            ->add('telefono2',IntegerType::class,array('label'=>'Teléfono Secundario'))
-            ->add('fechaCreacion',DateType::class,array('label'=>'Fecha de creación de la Empresa'))
+            ->add('nombre')
+            ->add('apellido1')
+            ->add('apellido2')
+            ->add('ciclo')
             ->add('guardar',SubmitType::class)
             ->add('borrar', ResetType::class)
         ;
@@ -37,7 +32,7 @@ class EmpresasType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'FctBundle\Entity\Empresas'
+            'data_class' => 'FctBundle\Entity\Alumnos'
         ));
     }
 }

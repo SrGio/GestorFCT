@@ -13,3 +13,25 @@ nueva_empresas:
 exito_empresas:
     path:     /empresas/msgExito
     defaults: { _controller: FctBundle:Empresas:msgExito }
+
+show_alumnos:
+    path:     /alumnos/show
+    defaults: { _controller: FctBundle:Alumnos:show }
+
+nuevo_alumnos:
+    path:     /alumnos/nuevo
+    defaults: { _controller: FctBundle:Alumnos:nuevo }
+
+exito_alumnos:
+    path:     /alumnos/msgExito
+    defaults: { _controller: FctBundle:Alumnos:msgExito }
+
+api_show:
+    path:     /empresas
+    defaults: { _controller: FctBundle:Api:empresa }
+    methods:   [GET]
+
+api_insert:
+    path:     /empresas
+    defaults: { _controller: FctBundle:Api:empresaInsert }
+    methods:   [POST]
