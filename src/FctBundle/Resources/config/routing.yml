@@ -34,8 +34,17 @@ api_show:
 api_insert:
     path:     /empresas
     defaults: { _controller: FctBundle:Api:empresaInsert }
-    methods:   [POST
+    methods:   [POST]
 
 fct_profesores:
     path:     /profesores/all
     defaults: { _controller: FctBundle:Profesores:all }
+
+new_profesores:
+    path:     /profesores/nuevo
+    defaults: { _controller: FctBundle:Profesores:new }
+
+apiProfesores_show:
+    path:     /profesores
+    defaults: { _controller: FctBundle:Api:profesor }
+    methods:   [GET]

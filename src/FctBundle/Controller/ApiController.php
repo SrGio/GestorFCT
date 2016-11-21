@@ -34,6 +34,31 @@ class ApiController extends Controller{
         return $response;
         //return $this->json($empresas);
     }
+
+    private function serializeProfesor(Profesores $profesor)
+      {
+        return array(
+            'nombre' => $profesor->getNombre(),
+            'apellidos' => $profesor->getApellidos(),
+            'departamento' => $profesor->getDepartamento(),
+        );
+      }
+      public function profesorAction()
+      {
+          $repository = $this->getDoctrine()->getRepository('FctBundle:Profesores');
+          $profesores = $repository->findAll();
+
+          $data = array('profesores' => array());
+          foreach ($profesores as $profesor) {
+              $data['profesores'][] = $this->serializeProfesor($profesor);
+          }
+          $response = new JsonResponse($data, 400);
+          return $response;
+          //return $this->json($profesores);
+      }
+
+
+
     private function deserializeEmpresa()
       {
 

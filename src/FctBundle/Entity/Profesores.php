@@ -109,5 +109,51 @@ class Profesores
     {
         return $this->departamento;
     }
-}
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $alumnos;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->alumnos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add alumno
+     *
+     * @param \FctBundle\Entity\Alumnos $alumno
+     *
+     * @return Empresas
+     */
+    public function addAlumno(\FctBundle\Entity\Alumnos $alumno)
+    {
+        $this->alumnos[] = $alumno;
+
+        return $this;
+    }
+
+    /**
+     * Remove alumno
+     *
+     * @param \FctBundle\Entity\Alumnos $alumno
+     */
+    public function removeAlumno(\FctBundle\Entity\Alumnos $alumno)
+    {
+        $this->alumnos->removeElement($alumno);
+    }
+
+    /**
+     * Get alumnos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAlumnos()
+    {
+        return $this->alumnos;
+    }
+}
