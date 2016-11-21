@@ -19,10 +19,11 @@ class ProfesoresType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        //Construye el formulario
         $builder
-            ->add('nombre',TextType::class)
-            ->add('apellidos',TextType::class)
-            ->add('departamento',TextType::class)
+            ->add('nombre',TextType::class,array('label'=>'Nombre del Profesor'))
+            ->add('apellidos',TextType::class,array('label'=>'Apellidos del Profesor'))
+            ->add('departamento',TextType::class,array('label'=>'Departamento del Profesor'))
             ->add('guardar',SubmitType::class)
             ->add('borrar', ResetType::class)
         ;
