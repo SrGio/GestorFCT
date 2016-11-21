@@ -29,3 +29,10 @@ FctBundle\Entity\Alumnos:
           joinColumn:
               name: empresas_id
               referencedColumnName: id
+      manyToOne:
+        empresas:
+            targetEntity: Profesores
+            inversedBy: alumno
+            joinColumn:
+                name: profesores_id
+                referencedColumnName: id
