@@ -25,14 +25,14 @@ FctBundle\Entity\Alumnos:
     manyToOne:
       empresas:
           targetEntity: Empresas
-          inversedBy: alumno
+          inversedBy: alumnos
           joinColumn:
               name: empresas_id
               referencedColumnName: id
     manyToOne:
         profesores:
             targetEntity: Profesores
-            inversedBy: alumno
+            inversedBy: alumnos
             joinColumn:
                 name: profesores_id
                 referencedColumnName: id
