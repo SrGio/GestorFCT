@@ -20,6 +20,7 @@ class EmpresasType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+
             ->add('nombre',TextType::class,array('label'=>'Nombre de la Empresa'))
             ->add('direccion',TextType::class)
             ->add('cp',IntegerType::class,array('label'=>'Código Postal'))

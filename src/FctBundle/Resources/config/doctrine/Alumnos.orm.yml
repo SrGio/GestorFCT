@@ -1,12 +1,5 @@
 FctBundle\Entity\Alumnos:
     type: entity
-    manyToOne:
-      empresas:
-          targetEntity: Empresas
-          inversedBy: alumno
-          joinColumn:
-              name: id
-              referencedColumnName: id
     table: null
     repositoryClass: FctBundle\Repository\AlumnosRepository
     id:
@@ -29,3 +22,10 @@ FctBundle\Entity\Alumnos:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+    manyToOne:
+      empresas:
+          targetEntity: Empresas
+          inversedBy: alumno
+          joinColumn:
+              name: empresas_id
+              referencedColumnName: id

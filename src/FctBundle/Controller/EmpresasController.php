@@ -46,6 +46,4 @@ class EmpresasController extends Controller
         return $this->render('FctBundle:Empresas:empresas.html.twig',array('empresas'=>$empresas));
     }
 
-
-
 }

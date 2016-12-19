@@ -14,10 +14,7 @@ class AlumnosController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('FctBundle:Alumnos');
         $alumnos = $repository->findAll();
-        $repo2 = $this->getDoctrine()->getRepository('FctBundle:Empresas');
-        $empresas = $repo2->findAll();
-        var_dump($empresas);
-        return $this->render('FctBundle:Alumnos:alumnos.html.twig',array('alumnos'=>$alumnos,'empresas'=>$empresas));
+        return $this->render('FctBundle:Alumnos:show.html.twig',array('alumnos'=>$alumnos));
     }
 
     public function nuevoAction(Request $request)

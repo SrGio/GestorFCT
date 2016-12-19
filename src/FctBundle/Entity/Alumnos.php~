@@ -37,7 +37,7 @@ class Alumnos
     /**
      * @var int
      */
-    private $empresa;
+    private $empresas;
 
     /**
      * Get id
@@ -147,26 +147,26 @@ class Alumnos
 
 
     /**
-     * Set empresa
+     * Set empresas
      *
-     * @param string $empresa
+     * @param \FctBundle\Entity\Empresas $empresas
      *
      * @return Alumnos
      */
-    public function setEmpresa($empresa)
+    public function setEmpresas(\FctBundle\Entity\Empresas $empresas = null)
     {
-        $this->empresa = $empresa;
+        $this->empresas = $empresas;
 
         return $this;
     }
 
     /**
-     * Get empresa
+     * Get empresas
      *
-     * @return string
+     * @return \FctBundle\Entity\Empresas
      */
-    public function getEmpresa()
+    public function getEmpresas()
     {
-        return $this->empresa;
+        return $this->empresas;
     }
 }

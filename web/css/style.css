@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
   background-color:grey;
 }
@@ -37,3 +38,74 @@ button{
   display: inline-block;
   float: left;
 }
+=======
+
+#head{
+  background-color: #1E1E29;
+  color: #ffffff;
+  margin: 0;
+}
+
+.row{
+  margin:0;
+}
+
+a{
+  text-decoration: none;
+  display:block;
+}
+#menu, h2, a{
+  background-color: #272634;
+  color: #929299;
+}
+
+#menu{
+  min-height: 500px;
+  margin:0;
+}
+
+#head2{
+  background-color: #FCFCFC;
+  margin: 0;
+}
+
+#contenido{
+  background-color: #3E4855;
+  margin: 0;
+  min-height: 500px;
+}
+
+table{
+  border: 1px solid black;
+  padding: 5px;
+  background-color: white;
+}
+form{
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 15px;
+  padding-bottom: 30px;
+  margin: 5px;
+  background-color: white;
+}
+div{
+  margin: 0px;
+  background-color: white;
+}
+label{
+  background-color: white;
+}
+input{
+  background-color: white;
+  border-radius:5px;
+  margin-left: 10px;
+  width: 50%;
+}
+select, td, tr{
+  background-color: white;
+}
+button{
+  display: inline-block;
+  float: left;
+}
+>>>>>>> ef13c8af2fa6238cc59d01007d39735ad955a030
