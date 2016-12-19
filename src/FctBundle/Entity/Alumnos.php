@@ -40,6 +40,11 @@ class Alumnos
     private $empresas;
 
     /**
+     * @var int
+     */
+    private $profesores;
+
+    /**
      * Get id
      *
      * @return int
@@ -168,5 +173,29 @@ class Alumnos
     public function getEmpresas()
     {
         return $this->empresas;
+    }
+
+    /**
+     * Set profesores
+     *
+     * @param \FctBundle\Entity\Profesroes $profesores
+     *
+     * @return Alumnos
+     */
+    public function setProfesores(\FctBundle\Entity\Profesores $profesores = null)
+    {
+        $this->profesores = $profesores;
+
+        return $this;
+    }
+
+    /**
+     * Get profesores
+     *
+     * @return \FctBundle\Entity\Profesores
+     */
+    public function getProfesores()
+    {
+        return $this->profesores;
     }
 }

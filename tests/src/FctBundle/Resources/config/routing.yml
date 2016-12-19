@@ -1,0 +1,27 @@
+fct_homepage:
+    path:     /
+    defaults: { _controller: FctBundle:Default:index }
+
+fct_empresas:
+    path:     /empresas/all
+    defaults: { _controller: FctBundle:Empresas:all }
+
+nueva_empresas:
+    path:     /empresas/nueva
+    defaults: { _controller: FctBundle:Empresas:nueva }
+
+exito_empresas:
+    path:     /empresas/msgExito
+    defaults: { _controller: FctBundle:Empresas:msgExito }
+
+show_alumnos:
+    path:     /alumnos/show
+    defaults: { _controller: FctBundle:Alumnos:show }
+
+nuevo_alumnos:
+    path:     /alumnos/nuevo
+    defaults: { _controller: FctBundle:Alumnos:nuevo }
+
+exito_alumnos:
+    path:     /alumnos/msgExito
+    defaults: { _controller: FctBundle:Alumnos:msgExito }

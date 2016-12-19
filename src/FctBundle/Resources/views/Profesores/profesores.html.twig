@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+{% block title %}Empresas FCT{% endblock %}
+
+
+{% block body %}
+
+
+
+<table id="profesores">
+  <tr>
+      <td>ID Profesor</td>
+      <td>Nombre Profesor</td>
+      <td>Apellidos</td>
+  </tr>
+  {% for profesor in profesores %}
+    <tr>
+        <td>{{ profesor.id}}</td>
+        <td>{{ profesor.nombre}}</td>
+        <td>{{ profesor.apellidos}}</td>
+    </tr>
+  {% endfor %}
+</table>
+  {% endblock %}

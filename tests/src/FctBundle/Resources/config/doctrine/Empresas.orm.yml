@@ -1,0 +1,31 @@
+FctBundle\Entity\Empresas:
+    type: entity
+    oneToMany:
+        alumnos:
+            targetEntity: Alumnos
+            mappedBy: empresas
+    table: null
+    repositoryClass: FctBundle\Repository\EmpresasRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+        direccion:
+            type: string
+            length: 255
+        cp:
+            type: integer
+        telefono1:
+            type: integer
+        telefono2:
+            type: integer
+        fechaCreacion:
+            type: datetime
+            column: fecha_creacion
+    lifecycleCallbacks: {  }

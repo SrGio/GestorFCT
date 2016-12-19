@@ -1,0 +1,25 @@
+FctBundle\Entity\Profesores:
+    type: entity
+    table: null
+    repositoryClass: FctBundle\Repository\ProfesoresRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+        apellidos:
+            type: string
+            length: 255
+        departamento:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+    oneToMany:
+          alumnos:
+              targetEntity: Alumnos
+              mappedBy: profesores

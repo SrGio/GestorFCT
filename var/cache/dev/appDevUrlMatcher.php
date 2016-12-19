@@ -145,6 +145,55 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/empresas')) {
+            // api_show
+            if ($pathinfo === '/empresas') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_api_show;
+                }
+
+                return array (  '_controller' => 'FctBundle\\Controller\\ApiController::empresaAction',  '_route' => 'api_show',);
+            }
+            not_api_show:
+
+            // api_insert
+            if ($pathinfo === '/empresas') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_api_insert;
+                }
+
+                return array (  '_controller' => 'FctBundle\\Controller\\ApiController::empresaInsertAction',  '_route' => 'api_insert',);
+            }
+            not_api_insert:
+
+        }
+
+        if (0 === strpos($pathinfo, '/profesores')) {
+            // fct_profesores
+            if ($pathinfo === '/profesores/all') {
+                return array (  '_controller' => 'FctBundle\\Controller\\ProfesoresController::allAction',  '_route' => 'fct_profesores',);
+            }
+
+            // new_profesores
+            if ($pathinfo === '/profesores/nuevo') {
+                return array (  '_controller' => 'FctBundle\\Controller\\ProfesoresController::newAction',  '_route' => 'new_profesores',);
+            }
+
+            // apiProfesores_show
+            if ($pathinfo === '/profesores') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_apiProfesores_show;
+                }
+
+                return array (  '_controller' => 'FctBundle\\Controller\\ApiController::profesorAction',  '_route' => 'apiProfesores_show',);
+            }
+            not_apiProfesores_show:
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
