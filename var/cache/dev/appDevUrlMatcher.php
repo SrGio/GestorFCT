@@ -194,6 +194,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // register
+        if ($pathinfo === '/register') {
+            return array (  '_controller' => 'FctBundle\\Controller\\UsersController::registerAction',  '_route' => 'register',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

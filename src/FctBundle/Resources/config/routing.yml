@@ -48,3 +48,7 @@ apiProfesores_show:
     path:     /profesores
     defaults: { _controller: FctBundle:Api:profesor }
     methods:   [GET]
+
+register:
+    path:     /register
+    defaults: { _controller: FctBundle:Users:register }

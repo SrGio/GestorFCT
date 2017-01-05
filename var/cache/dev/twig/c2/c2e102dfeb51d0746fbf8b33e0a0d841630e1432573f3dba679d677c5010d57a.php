@@ -22,93 +22,96 @@ class __TwigTemplate_d733dbd399897aea1c364051b12a191a9738c8a8cead838ce8fc99a802e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_32f82576ba9911c410b3ac8401b3b4fdfa0989cb94eef105dcc4a9e1a5e01390 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_32f82576ba9911c410b3ac8401b3b4fdfa0989cb94eef105dcc4a9e1a5e01390->enter($__internal_32f82576ba9911c410b3ac8401b3b4fdfa0989cb94eef105dcc4a9e1a5e01390_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FctBundle:Empresas:empresas.html.twig"));
+        $__internal_50e9d18b9a1e70b21da70af4a3ef3dd33d23142bb155a668331ea9442340d03f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_50e9d18b9a1e70b21da70af4a3ef3dd33d23142bb155a668331ea9442340d03f->enter($__internal_50e9d18b9a1e70b21da70af4a3ef3dd33d23142bb155a668331ea9442340d03f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FctBundle:Empresas:empresas.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_32f82576ba9911c410b3ac8401b3b4fdfa0989cb94eef105dcc4a9e1a5e01390->leave($__internal_32f82576ba9911c410b3ac8401b3b4fdfa0989cb94eef105dcc4a9e1a5e01390_prof);
+        $__internal_50e9d18b9a1e70b21da70af4a3ef3dd33d23142bb155a668331ea9442340d03f->leave($__internal_50e9d18b9a1e70b21da70af4a3ef3dd33d23142bb155a668331ea9442340d03f_prof);
 
     }
 
     // line 2
     public function block_title($context, array $blocks = array())
     {
-        $__internal_eaab2e7830ed929376b5f928f79c917d2d8a3b9665dcd75d5a7721d822e81004 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_eaab2e7830ed929376b5f928f79c917d2d8a3b9665dcd75d5a7721d822e81004->enter($__internal_eaab2e7830ed929376b5f928f79c917d2d8a3b9665dcd75d5a7721d822e81004_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_8443aae434df1b361f831172cab7489577f893e9c086ddb2f9fa79d896315dad = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_8443aae434df1b361f831172cab7489577f893e9c086ddb2f9fa79d896315dad->enter($__internal_8443aae434df1b361f831172cab7489577f893e9c086ddb2f9fa79d896315dad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Empresas FCT";
         
-        $__internal_eaab2e7830ed929376b5f928f79c917d2d8a3b9665dcd75d5a7721d822e81004->leave($__internal_eaab2e7830ed929376b5f928f79c917d2d8a3b9665dcd75d5a7721d822e81004_prof);
+        $__internal_8443aae434df1b361f831172cab7489577f893e9c086ddb2f9fa79d896315dad->leave($__internal_8443aae434df1b361f831172cab7489577f893e9c086ddb2f9fa79d896315dad_prof);
 
     }
 
     // line 5
     public function block_body($context, array $blocks = array())
     {
-        $__internal_d2795df5050c1f508d296e448ee87f979778e708b4665e8a0f426beea847163d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_d2795df5050c1f508d296e448ee87f979778e708b4665e8a0f426beea847163d->enter($__internal_d2795df5050c1f508d296e448ee87f979778e708b4665e8a0f426beea847163d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_df27d10f8b6c15fba17563c7c6b973bee671d2cec4874ac097e2f57372bb0c90 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_df27d10f8b6c15fba17563c7c6b973bee671d2cec4874ac097e2f57372bb0c90->enter($__internal_df27d10f8b6c15fba17563c7c6b973bee671d2cec4874ac097e2f57372bb0c90_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
         echo "
-
-
-<table id=\"empresas\">
-  <tr>
-      <td>ID Empresa</td>
-      <td>Nombre Empresa</td>
-      <td>Dirección</td>
-      <td>Código Postal</td>
-      <td>Telefono 1</td>
-      <td>Telefono 2</td>
-      <td>Fecha de Creación</td>
-  </tr>
-  ";
-        // line 19
+<h2>Listado de Empresas</h2>
+<div class=\"table-responsive\">
+    <table id=\"empresas\" class=\"table table-bordered table-hover\">
+    <thead>
+        <tr>
+            <th>ID Empresa</th>
+            <th>Nombre Empresa</th>
+            <th>Dirección</th>
+            <th>Código Postal</th>
+            <th>Telefono 1</th>
+            <th>Telefono 2</th>
+            <th>Fecha de Creación</th>
+        </tr>
+    </thead>
+    ";
+        // line 21
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["empresas"]) ? $context["empresas"] : $this->getContext($context, "empresas")));
         foreach ($context['_seq'] as $context["_key"] => $context["empresa"]) {
-            // line 20
-            echo "    <tr>
-        <td>";
-            // line 21
+            // line 22
+            echo "      <tr>
+          <td>";
+            // line 23
             echo twig_escape_filter($this->env, $this->getAttribute($context["empresa"], "id", array()), "html", null, true);
             echo "</td>
-        <td>";
-            // line 22
+          <td>";
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($context["empresa"], "nombre", array()), "html", null, true);
             echo "</td>
-        <td>";
-            // line 23
+          <td>";
+            // line 25
             echo twig_escape_filter($this->env, $this->getAttribute($context["empresa"], "direccion", array()), "html", null, true);
             echo "</td>
-        <td>";
-            // line 24
+          <td>";
+            // line 26
             echo twig_escape_filter($this->env, $this->getAttribute($context["empresa"], "cp", array()), "html", null, true);
             echo "</td>
-        <td>";
-            // line 25
+          <td>";
+            // line 27
             echo twig_escape_filter($this->env, $this->getAttribute($context["empresa"], "telefono1", array()), "html", null, true);
             echo "</td>
-        <td>";
-            // line 26
+          <td>";
+            // line 28
             echo twig_escape_filter($this->env, $this->getAttribute($context["empresa"], "telefono2", array()), "html", null, true);
             echo "</td>
-        <td>";
-            // line 27
+          <td>";
+            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["empresa"], "fechaCreacion", array()), "date", array()), "html", null, true);
             echo "</td>
-    </tr>
-  ";
+      </tr>
+      ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['empresa'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
-        echo "</table>
-  ";
+        // line 32
+        echo "      </table>
+</div>
+";
         
-        $__internal_d2795df5050c1f508d296e448ee87f979778e708b4665e8a0f426beea847163d->leave($__internal_d2795df5050c1f508d296e448ee87f979778e708b4665e8a0f426beea847163d_prof);
+        $__internal_df27d10f8b6c15fba17563c7c6b973bee671d2cec4874ac097e2f57372bb0c90->leave($__internal_df27d10f8b6c15fba17563c7c6b973bee671d2cec4874ac097e2f57372bb0c90_prof);
 
     }
 
@@ -124,7 +127,7 @@ class __TwigTemplate_d733dbd399897aea1c364051b12a191a9738c8a8cead838ce8fc99a802e
 
     public function getDebugInfo()
     {
-        return array (  108 => 30,  99 => 27,  95 => 26,  91 => 25,  87 => 24,  83 => 23,  79 => 22,  75 => 21,  72 => 20,  68 => 19,  53 => 6,  47 => 5,  35 => 2,  11 => 1,);
+        return array (  110 => 32,  101 => 29,  97 => 28,  93 => 27,  89 => 26,  85 => 25,  81 => 24,  77 => 23,  74 => 22,  70 => 21,  53 => 6,  47 => 5,  35 => 2,  11 => 1,);
     }
 
     public function getSource()
@@ -135,31 +138,34 @@ class __TwigTemplate_d733dbd399897aea1c364051b12a191a9738c8a8cead838ce8fc99a802e
 
 {% block body %}
 
-
-
-<table id=\"empresas\">
-  <tr>
-      <td>ID Empresa</td>
-      <td>Nombre Empresa</td>
-      <td>Dirección</td>
-      <td>Código Postal</td>
-      <td>Telefono 1</td>
-      <td>Telefono 2</td>
-      <td>Fecha de Creación</td>
-  </tr>
-  {% for empresa in empresas %}
-    <tr>
-        <td>{{ empresa.id}}</td>
-        <td>{{ empresa.nombre}}</td>
-        <td>{{ empresa.direccion}}</td>
-        <td>{{ empresa.cp}}</td>
-        <td>{{ empresa.telefono1}}</td>
-        <td>{{ empresa.telefono2}}</td>
-        <td>{{ empresa.fechaCreacion.date}}</td>
-    </tr>
-  {% endfor %}
-</table>
-  {% endblock %}
+<h2>Listado de Empresas</h2>
+<div class=\"table-responsive\">
+    <table id=\"empresas\" class=\"table table-bordered table-hover\">
+    <thead>
+        <tr>
+            <th>ID Empresa</th>
+            <th>Nombre Empresa</th>
+            <th>Dirección</th>
+            <th>Código Postal</th>
+            <th>Telefono 1</th>
+            <th>Telefono 2</th>
+            <th>Fecha de Creación</th>
+        </tr>
+    </thead>
+    {% for empresa in empresas %}
+      <tr>
+          <td>{{ empresa.id}}</td>
+          <td>{{ empresa.nombre}}</td>
+          <td>{{ empresa.direccion}}</td>
+          <td>{{ empresa.cp}}</td>
+          <td>{{ empresa.telefono1}}</td>
+          <td>{{ empresa.telefono2}}</td>
+          <td>{{ empresa.fechaCreacion.date}}</td>
+      </tr>
+      {% endfor %}
+      </table>
+</div>
+{% endblock %}
 ";
     }
 }

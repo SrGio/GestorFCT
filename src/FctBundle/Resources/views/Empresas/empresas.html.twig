@@ -4,28 +4,31 @@
 
 {% block body %}
 
-
-
-<table id="empresas">
-  <tr>
-      <td>ID Empresa</td>
-      <td>Nombre Empresa</td>
-      <td>Dirección</td>
-      <td>Código Postal</td>
-      <td>Telefono 1</td>
-      <td>Telefono 2</td>
-      <td>Fecha de Creación</td>
-  </tr>
-  {% for empresa in empresas %}
-    <tr>
-        <td>{{ empresa.id}}</td>
-        <td>{{ empresa.nombre}}</td>
-        <td>{{ empresa.direccion}}</td>
-        <td>{{ empresa.cp}}</td>
-        <td>{{ empresa.telefono1}}</td>
-        <td>{{ empresa.telefono2}}</td>
-        <td>{{ empresa.fechaCreacion.date}}</td>
-    </tr>
-  {% endfor %}
-</table>
-  {% endblock %}
+<h2>Listado de Empresas</h2>
+<div class="table-responsive">
+    <table id="empresas" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>ID Empresa</th>
+            <th>Nombre Empresa</th>
+            <th>Dirección</th>
+            <th>Código Postal</th>
+            <th>Telefono 1</th>
+            <th>Telefono 2</th>
+            <th>Fecha de Creación</th>
+        </tr>
+    </thead>
+    {% for empresa in empresas %}
+      <tr>
+          <td>{{ empresa.id}}</td>
+          <td>{{ empresa.nombre}}</td>
+          <td>{{ empresa.direccion}}</td>
+          <td>{{ empresa.cp}}</td>
+          <td>{{ empresa.telefono1}}</td>
+          <td>{{ empresa.telefono2}}</td>
+          <td>{{ empresa.fechaCreacion.date}}</td>
+      </tr>
+      {% endfor %}
+      </table>
+</div>
+{% endblock %}
