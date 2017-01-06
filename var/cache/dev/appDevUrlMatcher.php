@@ -194,9 +194,25 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // register
-        if ($pathinfo === '/register') {
-            return array (  '_controller' => 'FctBundle\\Controller\\UsersController::registerAction',  '_route' => 'register',);
+        if (0 === strpos($pathinfo, '/usuarios')) {
+            // register
+            if ($pathinfo === '/usuarios/registro') {
+                return array (  '_controller' => 'FctBundle\\Controller\\UsersController::registerAction',  '_route' => 'register',);
+            }
+
+            if (0 === strpos($pathinfo, '/usuarios/log')) {
+                // login
+                if ($pathinfo === '/usuarios/login') {
+                    return array (  '_controller' => 'FctBundle\\Controller\\UsersController::loginAction',  '_route' => 'login',);
+                }
+
+                // logout
+                if ($pathinfo === '/usuarios/logout') {
+                    return array('_route' => 'logout');
+                }
+
+            }
+
         }
 
         // homepage

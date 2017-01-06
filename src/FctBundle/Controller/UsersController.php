@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 class UsersController extends Controller
 {
     /**
-     * @Route("/register", name="user_registration")
+     * @Route("/usuarios/registro", name="user_registration")
      */
     public function registerAction(Request $request)
     {
@@ -43,5 +43,32 @@ class UsersController extends Controller
         return $this->render('FctBundle:Users:registro.html.twig',array('form' => $form->createView())
         );
     }
+    /**
+     * @Route("/usuarios", name="usuarios")
+     */
+    public function usuariosAction(Request $request)
+    {
+      return $this->render('FctBundle:Users:usuarios.html.twig');
+    }
+
+    /**
+     * @Route("/usuarios/login", name="login")
+     */
+    public function loginAction(Request $request)
+    {
+        $authenticationUtils = $this->get('security.authentication_utils');
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        return $this->render('FctBundle:Users:login.html.twig', array(
+            'last_username' => $lastUsername,
+            'error'         => $error,
+        ));
+    }
+
 }
 ?>
