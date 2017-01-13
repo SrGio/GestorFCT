@@ -9,3 +9,9 @@
 .navbar-fixed-top{
   min-height: 100px;
 }
+
+ul li{
+  list-style:none;
+  color: red;
+  font-weight:bold;
+}

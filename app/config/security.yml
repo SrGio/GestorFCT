@@ -32,9 +32,18 @@ security:
             form_login:
                 login_path: /usuarios/login
                 check_path: /usuarios/login
+                remember_me: true
             logout:
                 path:   /usuarios/logout
                 target: /usuarios/login
+            remember_me:
+                secret:   '%secret%'
+                lifetime: 604800 # 1 week in seconds
+                path:     /
+                # by default, the feature is enabled by checking a
+                # checkbox in the login form (see below), uncomment the
+                # following line to always enable it.
+                always_remember_me: true
         main:
               anonymous: ~
             # activate different ways to authenticate

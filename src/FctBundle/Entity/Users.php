@@ -24,18 +24,51 @@ class Users implements UserInterface
 
     /**
      * @var string
+     * @Assert\NotBlank()
+    *  @Assert\Length(
+    *      min = 4,
+    *      max = 32,
+    *      minMessage = "Debe tener como minimo 4 caracteres",
+    *      maxMessage = "Debe tener como máximo 32 caracteres"
+    * )
      */
     private $username;
 
     /**
      * @var string
+     * @Assert\NotBlank()
+     * @Assert\Email(
+     *     message = "El email '{{ value }}' no es valido.",
+     *     checkMX = true
+     * )
      */
     private $email;
 
     /**
      * @Assert\NotBlank()
-     * @Assert\Length(max=4096)
+     * @Assert\Length(
+     *      min = 8,
+     *      max=4096,
+     *      minMessage = "Debe tener como minimo 8 caracteres",
+     * )
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=true,
+     *     message="Debe contener algún número"
+     * )
+     *
+     * @Assert\Regex(
+     *     pattern     = "/^[a-z]+.+$/i",
+     *     htmlPattern = "^[a-z]+$",
+     *     message="Debe contener alguna letra"
+     * )
+     * @Assert\Regex(
+     *     pattern     = "/^[A-Z]+.+$/",
+     *     htmlPattern = "^[a-zA-Z]+$",
+     *     message="Debe contener alguna letra mayúscula"
+     * )
      */
+
     private $plainPassword;
 
     /**

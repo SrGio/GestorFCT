@@ -9,7 +9,6 @@
 <form action="{{ path('login') }}" method="post">
     <label for="username">Username:</label>
     <input type="text" id="username" name="_username" value="{{ last_username }}" />
-
     <label for="password">Password:</label>
     <input type="password" id="password" name="_password" />
 
@@ -18,8 +17,11 @@
         is redirected to on success (more details below)
         <input type="hidden" name="_target_path" value="/account" />
     #}
+    <input type="checkbox" id="remember_me" name="_remember_me" checked />
+    <label for="remember_me">Recuerdame</label>
 
     <button type="submit">login</button>
 </form>
+<a href="/usuarios/registro">Registrarse</a>
 
 {% endblock %}

@@ -36,8 +36,9 @@ class UsersController extends Controller
 
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
-
-            return new Response("Usuario registrado");
+            return $this->render('FctBundle:Users:bienvenido.html.twig',array("form"=>$form->createView() ));
+            //return new Response("Usuario registrado");
+            //return $this->render('FctBundle:Users:login.html.twig',array('form' => $form->createView()));
         }
 
         return $this->render('FctBundle:Users:registro.html.twig',array('form' => $form->createView())
