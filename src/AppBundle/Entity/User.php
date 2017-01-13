@@ -1,30 +1,16 @@
 <?php
 
-namespace FctBundle\Entity;
+namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-<<<<<<< HEAD
-use Doctrine\ORM\Tools\Setup;
-use Doctrine\ORM\EntityManager;
-//use Symfony\Component\Validator\Constraints as Assert;
-//use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-=======
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
->>>>>>> master
-use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
  *
  * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="FctBundle\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-<<<<<<< HEAD
-
-=======
->>>>>>> master
-class User implements UserInterface
+class User
 {
     /**
      * @var int
@@ -138,22 +124,5 @@ class User implements UserInterface
     {
         return $this->password;
     }
-
-    public function getSalt()
-    {
-        // The bcrypt algorithm doesn't require a separate salt.
-        // You *may* need a real salt if you choose a different encoder.
-        return null;
-    }
-
-    public function getRoles() {
-<<<<<<< HEAD
-      return array('ROLE_USER');
-    }
-=======
-        return array('ROLE_USER');
-    }
-
->>>>>>> master
-    public function eraseCredentials(){}
 }
+

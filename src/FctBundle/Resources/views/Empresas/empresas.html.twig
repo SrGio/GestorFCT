@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends '::base.html.twig' %}
 {% block title %}Empresas FCT{% endblock %}
 
@@ -32,3 +33,36 @@
       </table>
 </div>
 {% endblock %}
+=======
+{% extends '::base.html.twig' %}
+{% block title %}Empresas FCT{% endblock %}
+
+
+{% block body %}
+
+
+
+<table id="empresas">
+  <tr>
+      <td>ID Empresa</td>
+      <td>Nombre Empresa</td>
+      <td>Dirección</td>
+      <td>Código Postal</td>
+      <td>Telefono 1</td>
+      <td>Telefono 2</td>
+      <td>Fecha de Creación</td>
+  </tr>
+  {% for empresa in empresas %}
+    <tr>
+        <td>{{ empresa.id}}</td>
+        <td>{{ empresa.nombre}}</td>
+        <td>{{ empresa.direccion}}</td>
+        <td>{{ empresa.cp}}</td>
+        <td>{{ empresa.telefono1}}</td>
+        <td>{{ empresa.telefono2}}</td>
+        <td>{{ empresa.fechaCreacion.date}}</td>
+    </tr>
+  {% endfor %}
+</table>
+  {% endblock %}
+>>>>>>> master

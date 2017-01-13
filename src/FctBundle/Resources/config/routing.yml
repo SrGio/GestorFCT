@@ -48,6 +48,7 @@ apiProfesores_show:
     path:     /profesores
     defaults: { _controller: FctBundle:Api:profesor }
     methods:   [GET]
+<<<<<<< HEAD
 
 register:
     path:     /usuarios/registro
@@ -59,3 +60,5 @@ login:
 
 logout:
     path:     /usuarios/logout
+=======
+>>>>>>> master
