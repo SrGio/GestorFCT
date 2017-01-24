@@ -1,0 +1,31 @@
+FctBundle\Entity\Alumnos:
+    type: entity
+    manyToOne:
+      empresas:
+          targetEntity: Empresas
+          inversedBy: alumno
+          joinColumn:
+              name: id
+              referencedColumnName: id
+    table: null
+    repositoryClass: FctBundle\Repository\AlumnosRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+        apellido1:
+            type: string
+            length: 255
+        apellido2:
+            type: string
+            length: 255
+        ciclo:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

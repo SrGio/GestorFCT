@@ -1,0 +1,23 @@
+FctBundle\Entity\Users:
+    type: entity
+    table: null
+    repositoryClass: FctBundle\Repository\UsersRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: 255
+            unique: true
+        email:
+            type: string
+            length: 255
+            unique: true
+        password:
+            type: string
+            length: '64'
+    lifecycleCallbacks: {  }
