@@ -29,7 +29,7 @@ class UsersController extends Controller
             $password = $this->get('security.password_encoder')
                 ->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($password);
-            $roles = ["ROLE_ADMIN","ROLE_SUPER_ADMIN"];
+            $roles = ["ROLE_USER"];
             $user->setRoles($roles);
             // 4) save the User!
             $em = $this->getDoctrine()->getManager();
