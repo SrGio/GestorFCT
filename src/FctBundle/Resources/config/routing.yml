@@ -59,3 +59,11 @@ login:
 
 logout:
     path:     /usuarios/logout
+
+admin_conf:
+    path:     /admin/config
+    defaults: { _controller: FctBundle:Users:admin }
+
+admin_user:
+    path:     /admin/user/{id}
+    defaults: { _controller: FctBundle:Users:user }

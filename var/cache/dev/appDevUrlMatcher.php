@@ -215,6 +215,19 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/admin')) {
+            // admin_conf
+            if ($pathinfo === '/admin/config') {
+                return array (  '_controller' => 'FctBundle\\Controller\\UsersController::adminAction',  '_route' => 'admin_conf',);
+            }
+
+            // admin_user
+            if (0 === strpos($pathinfo, '/admin/user') && preg_match('#^/admin/user/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user')), array (  '_controller' => 'FctBundle\\Controller\\UsersController::userAction',));
+            }
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

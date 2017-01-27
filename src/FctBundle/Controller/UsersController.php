@@ -8,6 +8,7 @@ use FctBundle\Form\UsersType;
 use FctBundle\Entity\Users;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class UsersController extends Controller
 {
@@ -28,7 +29,7 @@ class UsersController extends Controller
             $password = $this->get('security.password_encoder')
                 ->encodePassword($user, $user->getPlainPassword());
             $user->setPassword($password);
-            $roles = ["ROLE_USER"];
+            $roles = ["ROLE_ADMIN","ROLE_SUPER_ADMIN"];
             $user->setRoles($roles);
             // 4) save the User!
             $em = $this->getDoctrine()->getManager();
@@ -70,6 +71,31 @@ class UsersController extends Controller
             'last_username' => $lastUsername,
             'error'         => $error,
         ));
+    }
+
+    /**
+     * @Route("/admin/config", name="admin")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function adminAction(){
+
+        $repository = $this->getDoctrine()->getRepository('FctBundle:Users');
+        $usuarios = $repository->findAll();
+        //var_dump($usuarios);
+        return $this->render('FctBundle:Users:admin.html.twig',array('usuarios'=>$usuarios));
+    }
+
+
+    /**
+     * @Route("/admin/user", name="user")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function userAction($id){
+
+        $repository = $this->getDoctrine()->getRepository('FctBundle:Users');
+        $usuarios = $repository->findAll();
+        //var_dump($usuarios);
+        return $this->render('FctBundle:Users:user.html.twig',array('usuarios'=>$usuarios,'id'=>$id));
     }
 
 }

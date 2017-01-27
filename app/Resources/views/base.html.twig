@@ -154,6 +154,13 @@
                <li>
                    <a href="/alumnos/show"><i class="fa fa-fw fa-table"></i>Mostrar Alumnos</a>
                </li>
+            {% if is_granted('ROLE_ADMIN') %}
+               <li>
+                   <a href="/admin/config"><i class="fa fa-fw fa-table"></i>Administración de Usuarios</a>
+               </li>
+             {% endif %}
+
+
             </ul>
           </div>
         </nav>

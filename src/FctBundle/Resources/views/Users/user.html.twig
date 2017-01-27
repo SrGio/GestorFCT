@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+{% block title %}Admin Zone{% endblock %}
+
+
+{% block body %}
+
+
+{% for usuario in usuarios %}
+  {% if usuario.id == id %}
+
+      <h1>{{ usuario.username}}</h1>
+      <h3>{{ usuario.email}}</h3>
+      {% for roles in usuario.roles %}
+        {{ roles}}
+
+        <br>
+      {% endfor %}
+      {% for roles in usuario.roles %}
+                    {% if roles == "ROLE_ADMIN" %}
+                      <a href="user&id={{usuario.id}})">Quitar rol de administrador</a>
+                    {% else %}
+                      <a href="user&id={{usuario.id}})">Añadir rol de administrador</a>
+                    {% endif %}
+                  {% endfor %}
+
+
+
+  {% endif %}
+{% endfor %}
+
+<br>
+<a href="/admin/config" >Volver al listado de usuarios </a>
+
+  {% endblock %}
