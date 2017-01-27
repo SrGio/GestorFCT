@@ -16,14 +16,12 @@
         <br>
       {% endfor %}
       {% for roles in usuario.roles %}
-                    {% if roles == "ROLE_ADMIN" %}
-                      <a href="user&id={{usuario.id}})">Quitar rol de administrador</a>
-                    {% else %}
-                      <a href="user&id={{usuario.id}})">Añadir rol de administrador</a>
-                    {% endif %}
-                  {% endfor %}
-
-
+          {% if roles == "ROLE_ADMIN" %}
+              <a href="{{usuario.id}}/remove">Quitar rol de administrador</a>
+          {% else %}
+              <a href="{{usuario.id}}/add">Añadir rol de administrador</a>
+          {% endif %}
+      {% endfor %}
 
   {% endif %}
 {% endfor %}

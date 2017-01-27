@@ -98,5 +98,41 @@ class UsersController extends Controller
         return $this->render('FctBundle:Users:user.html.twig',array('usuarios'=>$usuarios,'id'=>$id));
     }
 
+    /**
+     * @Route("/admin/user", name="user")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function addAction($id){
+
+        $repository = $this->getDoctrine()->getRepository('FctBundle:Users');
+        $usuarios = $repository->findOneById($id);
+        $roles = ["ROLE_USER","ROLE_ADMIN"];
+        $usuarios->setRoles($roles);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($usuarios);
+        $em->flush();
+
+        return $this->render('FctBundle:Users:user.html.twig',array('usuarios'=>$usuarios,'id'=>$id));
+    }
+
+    /**
+     * @Route("/admin/user", name="user")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function removeAction($id){
+
+        $repository = $this->getDoctrine()->getRepository('FctBundle:Users');
+        $usuarios = $repository->findOneById($id);
+        $roles = ["ROLE_USER"];
+        $usuarios->setRoles($roles);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($usuarios);
+        $em->flush();
+
+        return $this->render('FctBundle:Users:user.html.twig',array('usuarios'=>$usuarios,'id'=>$id));
+    }
+
 }
 ?>

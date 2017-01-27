@@ -221,9 +221,22 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'FctBundle\\Controller\\UsersController::adminAction',  '_route' => 'admin_conf',);
             }
 
-            // admin_user
-            if (0 === strpos($pathinfo, '/admin/user') && preg_match('#^/admin/user/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user')), array (  '_controller' => 'FctBundle\\Controller\\UsersController::userAction',));
+            if (0 === strpos($pathinfo, '/admin/user')) {
+                // admin_user
+                if (preg_match('#^/admin/user/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user')), array (  '_controller' => 'FctBundle\\Controller\\UsersController::userAction',));
+                }
+
+                // admin_add
+                if (preg_match('#^/admin/user/(?P<id>[^/]++)/add$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_add')), array (  '_controller' => 'FctBundle\\Controller\\UsersController::addAction',));
+                }
+
+                // admin_remove
+                if (preg_match('#^/admin/user/(?P<id>[^/]++)/remove$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_remove')), array (  '_controller' => 'FctBundle\\Controller\\UsersController::removeAction',));
+                }
+
             }
 
         }

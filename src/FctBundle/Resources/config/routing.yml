@@ -67,3 +67,11 @@ admin_conf:
 admin_user:
     path:     /admin/user/{id}
     defaults: { _controller: FctBundle:Users:user }
+
+admin_add:
+    path:     /admin/user/{id}/add
+    defaults: { _controller: FctBundle:Users:add }
+
+admin_remove:
+    path:     /admin/user/{id}/remove
+    defaults: { _controller: FctBundle:Users:remove }
