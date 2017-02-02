@@ -7,7 +7,7 @@ use FctBundle\Entity\conf;
 use FctBundle\Form\confType;
 use Symfony\Component\httpFoundation\Request;
 
-class AlumnosController extends Controller
+class confController extends Controller
 {
     public function confAction()
     {
@@ -42,6 +42,6 @@ class AlumnosController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('FctBundle:conf');
         $config = $repository->findAll();
-        return $this->render('FctBundle:conf:conf.html.twig',array('config'=>$config));
+        return $this->render('FctBundle:conf:config.html.twig',array('config'=>$config));
     }
 }

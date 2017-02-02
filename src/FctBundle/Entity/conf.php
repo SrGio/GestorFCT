@@ -1,6 +1,8 @@
 <?php
 
 namespace FctBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * conf
@@ -14,12 +16,14 @@ class conf
 
     /**
      * @var string
+     *
      * @Assert\NotBlank()
      */
     private $param;
 
     /**
      * @var string
+     *
      * @Assert\NotBlank()
      */
     private $configuracion;

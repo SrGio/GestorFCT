@@ -78,8 +78,12 @@ admin_remove:
 
 config_show:
     path:     /conf/config
-    defaults: { _controller: FctBundle:conf:config }
+    defaults: { _controller: FctBundle:conf:conf }
 
 config_add:
     path:     /conf/add
     defaults: { _controller: FctBundle:conf:addConf }
+
+exito_configuracion:
+    path:     /conf/msgExito
+    defaults: { _controller: FctBundle:conf:msgExito }

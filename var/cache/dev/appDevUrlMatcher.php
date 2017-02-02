@@ -241,6 +241,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/conf')) {
+            // config_show
+            if ($pathinfo === '/conf/config') {
+                return array (  '_controller' => 'FctBundle\\Controller\\confController::confAction',  '_route' => 'config_show',);
+            }
+
+            // config_add
+            if ($pathinfo === '/conf/add') {
+                return array (  '_controller' => 'FctBundle\\Controller\\confController::addConfAction',  '_route' => 'config_add',);
+            }
+
+            // exito_configuracion
+            if ($pathinfo === '/conf/msgExito') {
+                return array (  '_controller' => 'FctBundle\\Controller\\confController::msgExitoAction',  '_route' => 'exito_configuracion',);
+            }
+
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
