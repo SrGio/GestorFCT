@@ -1,0 +1,18 @@
+FctBundle\Entity\conf:
+    type: entity
+    table: null
+    repositoryClass: FctBundle\Repository\confRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        param:
+            type: string
+            length: 255
+        configuracion:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

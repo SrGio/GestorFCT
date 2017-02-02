@@ -1271,3 +1271,11 @@ b8bc10,127.0.0.1,GET,http://localhost:8000/admin/user/4,1485522198,,200
 1eb200,127.0.0.1,GET,http://localhost:8000/admin/user/4/remove,1485522206,,200
 730cfb,127.0.0.1,GET,http://localhost:8000/usuarios/logout,1485522211,,302
 79c56b,127.0.0.1,GET,http://localhost:8000/usuarios/login,1485522212,,200
+3d5d1d,127.0.0.1,GET,http://localhost:8000/,1486032728,c5d5f4,200
+c5d5f4,127.0.0.1,GET,http://localhost:8000/,1486032728,,500
+f7bac0,127.0.0.1,GET,http://localhost:8000/_wdt/c5d5f4,1486032729,8f0717,200
+8f0717,127.0.0.1,GET,http://localhost:8000/_wdt/c5d5f4,1486032729,,500
+472e2b,127.0.0.1,GET,http://localhost:8000/,1486032792,f58aaa,200
+f58aaa,127.0.0.1,GET,http://localhost:8000/,1486032792,,500
+d27a05,127.0.0.1,GET,http://localhost:8000/_wdt/f58aaa,1486032793,38c704,200
+38c704,127.0.0.1,GET,http://localhost:8000/_wdt/f58aaa,1486032793,,500

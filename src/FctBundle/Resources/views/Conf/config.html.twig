@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+{% block title %}Empresas FCT{% endblock %}
+
+
+{% block body %}
+
+<h2>Listado de Parametros y Configuraciones</h2>
+<div class="table-responsive">
+    <table id="configuracion" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Parámetro</th>
+            <th>Configuración</th>
+        </tr>
+      </thead>
+      {% for conf in config %}
+      <tr>
+          <td>{{ conf.id}}</td>
+          <td>{{ conf.param}}</td>
+          <td>{{ conf.configuracion}}</td>
+      </tr>
+      {% endfor %}
+      </table>
+</div>
+{% endblock %}

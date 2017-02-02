@@ -75,3 +75,11 @@ admin_add:
 admin_remove:
     path:     /admin/user/{id}/remove
     defaults: { _controller: FctBundle:Users:remove }
+
+config_show:
+    path:     /conf/config
+    defaults: { _controller: FctBundle:conf:config }
+
+config_add:
+    path:     /conf/add
+    defaults: { _controller: FctBundle:conf:addConf }
